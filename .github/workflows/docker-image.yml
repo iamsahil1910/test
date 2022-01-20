@@ -29,6 +29,8 @@ jobs:
         REACT_APP_API_URL: http://0.0.0.0:8000
       with:
         node-version: ${{ matrix.node-version }}
+    - run: export SKIP_PREFLIGHT_CHECK=SKIP_PREFLIGHT_CHECK
+    - run: export REACT_APP_API_URL=$REACT_APP_API_URL
     - run: npm ci
     - run: npm run build --if-present
 
