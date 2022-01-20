@@ -33,13 +33,26 @@ jobs:
         echo REACT_APP_API_URL='http://0.0.0.0:8000' >> .env
     - run: npm ci
     - run: npm run build --if-present
+    - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build/
 
 
   build:
     needs: build-react
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./backend
+
     steps:
+    - name: Download math result for job 1
+        uses: actions/download-artifact@v2
+        with:
+          name: build
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
