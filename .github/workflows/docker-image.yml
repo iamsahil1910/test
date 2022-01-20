@@ -36,7 +36,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build
-        path: ./frontend/build
+        path: ./backend/
 
 
   build:
@@ -45,10 +45,7 @@ jobs:
 
   
     steps:
-    - uses: actions/download-artifact@v2
-      with:
-        name: build
-        path: ./backend/
+
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
