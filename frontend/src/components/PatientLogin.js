@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Cookies from 'js-cookie';
 import Header from './Header';
 import Footer from './Footer';
 import "./App.css";
 import { login } from '../api/auth_patient';
 import { Navigate } from 'react-router-dom';
 import CSRFToken from './CSRFToken';
-import { patientdata } from '../api/pat';
 
 const PatientLogin = ({isAuthenticated, setIsAuthenticated}) =>{
 

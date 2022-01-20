@@ -90,6 +90,9 @@ const Prescription = ({ isAuthenticated, setIsAuthenticated }) => {
             if (parseInt(data.id) === parseInt(addPrescription.patient_id)) {
                 return data.firstname + ' ' + data.lastname
             }
+            else {
+                return undefined
+            }
         })
         let patient_name2;
         for(let i=0;i<patient_name.length;i++)
