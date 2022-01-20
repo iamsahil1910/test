@@ -1,6 +1,6 @@
 FROM python:3.8
 ENV PYTHONUNBUFFERED 1
-WORKDIR /healthcare/backend
+WORKDIR /test/backend
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 RUN pwd
