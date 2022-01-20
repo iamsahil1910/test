@@ -24,13 +24,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
-      env:
-        SKIP_PREFLIGHT_CHECK: true
-        REACT_APP_API_URL: http://0.0.0.0:8000
+
       with:
         node-version: ${{ matrix.node-version }}
-    - run: export SKIP_PREFLIGHT_CHECK=SKIP_PREFLIGHT_CHECK
-    - run: export REACT_APP_API_URL=$REACT_APP_API_URL
+    - run: export SKIP_PREFLIGHT_CHECK=true
+    - run: export REACT_APP_API_URL='http://0.0.0.0:8000'
     - run: npm ci
     - run: npm run build --if-present
 
