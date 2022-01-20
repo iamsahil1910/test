@@ -36,7 +36,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build
-        path: ./backend/
+        path: ./frontend/build
 
 
   build:
@@ -45,7 +45,10 @@ jobs:
 
   
     steps:
-
+    - uses: actions/download-artifact@v2
+      with:
+        name: build
+        path: /healthcare/backend/
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
