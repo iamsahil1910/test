@@ -6,7 +6,6 @@ import "./App.css";
 import { addPatient } from '../api/patientdata';
 import CSRFToken from './CSRFToken';
 import {doctordetail} from '../api/doc'
-import { checkAuthenticated } from '../api/auth';
 
 const AddPatient = () => {
     
