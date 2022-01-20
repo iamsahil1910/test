@@ -49,9 +49,6 @@ jobs:
       with:
         name: build
         path: ./backend/
-    - uses: canastro/copy-file-action@master
-      with:
-        source: ./backend/
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
