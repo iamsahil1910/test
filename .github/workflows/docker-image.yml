@@ -49,6 +49,9 @@ jobs:
       with:
         name: build
         path: ./backend/
+    - uses: canastro/copy-file-action@master
+      with:
+        source: ./backend/
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
@@ -57,7 +60,10 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker-compose build 
+      run: |
+        ls
+        pwd
+        docker-compose build 
     - name: Docker Tag
       run: docker tag test_project ${{secrets.DOCKER_USERNAME}}/test
     - name: Docker Push
