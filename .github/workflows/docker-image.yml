@@ -61,6 +61,7 @@ jobs:
         pwd
         ls
         ls backend/
+        ls backend/backend/
         ls frontend/
         ls backend/build/
         docker-compose build 
