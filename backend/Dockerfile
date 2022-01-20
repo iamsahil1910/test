@@ -3,6 +3,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /healthcare/backend
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
+RUN pwd
+RUN ls
 COPY build/ ./
 COPY . ./
 RUN python manage.py migrate
