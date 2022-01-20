@@ -58,10 +58,11 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
       run: |
+        pwd
         ls
         ls backend/
+        ls frontend/
         ls backend/build/
-        pwd
         docker-compose build 
     - name: Docker Tag
       run: docker tag test_project ${{secrets.DOCKER_USERNAME}}/test
