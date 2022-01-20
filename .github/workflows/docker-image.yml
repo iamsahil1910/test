@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  build-react:
 
     runs-on: ubuntu-latest
 
